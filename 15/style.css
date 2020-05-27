@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --borderColor: #b82525;
+    --fillColor: #a32121;
+    --textColor: #eee;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b82e1f;
+    background-image: linear-gradient(315deg, #b82e1f 0%, #000000 74%);
+}
+
+.btn {
+    font-family: 'Abril Fatface', cursive;
+    color: var(--textColor);
+    font-size: 20px;
+    position: relative;
+    width: 150px;
+    height: 50px;
+    border: 2px solid var(--borderColor);
+    border-radius: 5px;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#btn-t {
+    transition: 500ms ease-in-out;
+}
+
+.circle {
+    width: 150px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    background: var(--fillColor);
+    z-index: -1;
+    transition: 500ms ease-in-out;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 0px solid #eee;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    transition: 500ms ease-in-out;
+}
+
+#t1 {
+    left: 10px;
+}
+
+#t2 {
+    right: 10px;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn:hover .triangle {
+    border-top: 20px solid #eee;
+}
+
+#btn-t:hover {
+    background: var(--fillColor);
+}
+
+.btn:hover .circle {
+    bottom: 0;
+    border-radius: 0;
+    height: 50px;
+}
+
+.btn:active .circle {
+    background: var(--borderColor);
+}
